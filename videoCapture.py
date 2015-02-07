@@ -1,6 +1,6 @@
 # Module to take a YouTube video URL and download that video to a local directory within this folder
 
-# created by rajat mehndiratta (github/knyte)
+# created by rajat mehndiratta (github/knyte) and Ritwik Gupta (github/RitwikGupta)
 
 import sys
 from pytube import YouTube
@@ -9,8 +9,8 @@ from pytube import YouTube
 def getVideo(URL, sourceObject):
     filetypes = ['mp4', 'flv', 'webm', '3gp']
     resolutions = ['480p', '360p', '240p', '720p', '1080p', '144p']
-    for x in range(len(filetypes)):
-        for y in range(len(resolutions)):
+    for x in filetypes:
+        for y in resolutions:
             try:
                 video = sourceObject.get(x, y)
                 return video
@@ -27,4 +27,4 @@ def saveVideo(URL, directory, filename):
     else:
         print "Pick another video! This one didn't work :("
 
-saveVideo(sys.argv[1], ".", "notPorn")
+# saveVideo(sys.argv[1], ".", "notPorn")

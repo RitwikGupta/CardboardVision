@@ -5,3 +5,7 @@ MODULES TO INSTALL:
 pytube (https://github.com/nficano/pytube)
 
 FFmpeg (https://www.ffmpeg.org/download.html)
+
+numpy (just use pip)
+
+moviepy (just use pip)

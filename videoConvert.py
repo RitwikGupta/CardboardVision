@@ -1,6 +1,7 @@
 # Module for taking a locally saved video and extracting audio and frames
 
 # written by rajat mehndiratta (github/knyte) at TartanHacks w2015
+# tested and fixed by Ritwik Gupta (github/RitwikGupta)
 # credit to Ayub Khan @ StackOverflow
 
 import subprocess
@@ -23,7 +24,7 @@ def getFrames(videoFile, namePrefix)
 
     while rval:
         rval, frame = vc.read()
-        cv2.imwrite(str(namePrefix + str(c)) + ".png", frame)
+        cv2.imwrite(str(namePrefix + "0000" + str(c)) + ".png", frame)
         c += 1
         cv2.waitKey(1)
 
