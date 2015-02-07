@@ -24,7 +24,8 @@ def getFrames(videoFile, namePrefix)
 
     while rval:
         rval, frame = vc.read()
-        cv2.imwrite(str(namePrefix + "0000" + str(c)) + ".png", frame)
+        length = 5 -len(str(c))
+        cv2.imwrite(str(namePrefix + "0"*length + str(c)) + ".png", frame)
         c += 1
         cv2.waitKey(1)
 
