@@ -7,12 +7,12 @@
 import subprocess
 import cv2
 
-def getAudio(videoFile, audioName)
+def getAudio(videoFile, audioName):
     assert(type(videoFile) == type(audioName) == str)
     command = "ffmpeg -i " + videoFile + "- ab 160k ac 2 -ar 44100 -vn " + audioName + ".wav"
     subprocess.call(command, shell=True)
 
-def getFrames(videoFile, namePrefix)
+def getFrames(videoFile, namePrefix):
     assert(type(videoFile) == str)
     vc = cv2.VideoCapture(videoFile)
     c = 1
@@ -30,3 +30,5 @@ def getFrames(videoFile, namePrefix)
         cv2.waitKey(1)
 
     vc.release()
+    return c
+getFrames("driving_trim.mp4", "test")
