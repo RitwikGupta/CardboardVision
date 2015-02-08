@@ -9,3 +9,7 @@ FFmpeg (https://www.ffmpeg.org/download.html)
 numpy (just use pip)
 
 moviepy (just use pip)
+
+python image library (you should have it already; if not sudo apt-get install python-imaging)
+
+imread and imsave (get them from PyPI or pip)
