@@ -1,6 +1,7 @@
 # Module for stringing together images (frames) and audio file to create video
 
 # Written by rajat mehndiratta (github/knyte)
+# Edited and fixed by Ritwik Gupta (github/RitwikGupta)
 # credit to Daniel Stutzbach and Richard Bronosky on StackOverflow
 # as well as Peter Mortensen and ifLoop
 
