@@ -26,4 +26,8 @@ def getFrameRate(framePrefix, directory=".", filename):
     else:
         timeLine = duration[0]
     return 42
-        
+
+def addAudio(audioFile, videoFile, destinationFile)
+    assert(type(audioFile) == type(videoFile) == type(destinationFile) == str)
+    command = "ffmpeg -y -i " + audioFile + ".wav -r 30 -i " + videoFile + ".mp4 -filter:a aresample=async=1 -c:a flac -c:v copy " + destinationFile + ".mp4"
+    subprocess.call(command, shell=True)
