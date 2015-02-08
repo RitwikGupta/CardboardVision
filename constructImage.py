@@ -29,7 +29,8 @@ def addBars(imageFile):
     return newName
     
 
-def addLayer(initialImage, imageFile, mask):
+def addLayer(initialImage, imageFile, mask)
+    
     im = Image.open(imageFile)
     (width, height) = im.size
     sequence = im.getdata()
@@ -38,6 +39,11 @@ def addLayer(initialImage, imageFile, mask):
     SEQUENCE = IM.getdata()
     
     for i in xrange(width/3 -6, width/3 + 6):
+        for j in xrange(height):
+            if toPrint(i + j * width, mask):
+                sequence[i + j * width] = SEQUENCE[i + j * width]
+                
+    for i in xrange(2*with/3 - 6, 2*width/3 + 6):
         for j in xrange(height):
             if toPrint(i + j * width, mask):
                 sequence[i + j * width] = SEQUENCE[i + j * width]
@@ -56,7 +62,15 @@ def toPrint(position, mask):
     R = M[0]
     G = M[1]
     B = M[2]
-    
+    threshold = 30
+    if determinant(R, G, B) > threshold or R > 127 \
+       and G > 127 and B > 127:
+        return True
+    return False
+
+def determinant(R, G, B):
+    return abs(R-G) + abs(G-B) + abs(R-B)
+
 
 
 
