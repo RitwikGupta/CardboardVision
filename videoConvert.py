@@ -31,4 +31,4 @@ def getFrames(videoFile, namePrefix):
 
     vc.release()
     return c
-getFrames("driving_trim.mp4", "test")
+getFrames("output.avi", "mask")
