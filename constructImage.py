@@ -32,7 +32,6 @@ def addBars(imageFile):
 def addLayer(initialImage, imageFile, mask):
     im = Image.open(imageFile)
     (width, height) = im.size
-    mode = im.mode
     sequence = im.getdata()
 
     IM = Image.open(initialImage)
@@ -51,9 +50,12 @@ def addLayer(initialImage, imageFile, mask):
     return newName
 
 def toPrint(position, mask):
-    im = Image.open(mask)
+    im = Image.open(mask).convert('RGB')
     sequence = im.getdata()
-    mode = im.mode
+    M = sequence[position]
+    R = M[0]
+    G = M[1]
+    B = M[2]
     
 
 
